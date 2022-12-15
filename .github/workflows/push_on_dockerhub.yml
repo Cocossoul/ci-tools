@@ -4,7 +4,7 @@ on:
   workflow_run:
     workflows: ["build"]
     branches: [main]
-    types: 
+    types:
       - completed
 jobs:
   deploy:
@@ -12,6 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
+      - uses: actions/checkout@v2
       - name: Docker login
         env:
           DOCKER_USER: ${{secrets.DOCKER_USER}}
