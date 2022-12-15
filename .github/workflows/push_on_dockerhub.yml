@@ -1,16 +1,14 @@
 name: Push Docker Image on DockerHub
 
 on:
-  workflow_run:
-    workflows: ["build"]
-    branches: [main]
-    types:
-      - completed
+  push:
+    branches:
+      - main
+
 jobs:
   deploy:
     name: deploy
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v2
       - name: Docker login
