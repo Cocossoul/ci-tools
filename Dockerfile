@@ -11,3 +11,7 @@ RUN apk update &&\
     apk add --no-cache terraform --repository=https://dl-cdn.alpinelinux.org/alpine/latest-stable/community &&\
     mkdir -p ${GOPATH}/src ${GOPATH}/bin &&\
     go install github.com/passbolt/go-passbolt-cli@latest
+
+RUN mkdir -p /work
+RUN mkdir -p ~/.ssh
+WORKDIR /work
