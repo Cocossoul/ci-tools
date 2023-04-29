@@ -1,2 +1,3 @@
-# ansible-ci
-An Ansible Docker image for my Ansible CI/CDs
+# ci-tools
+
+A Docker image for my infra CI/CDs.

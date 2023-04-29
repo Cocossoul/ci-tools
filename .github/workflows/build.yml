@@ -10,4 +10,4 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build the Docker image
         run: |
-          docker build . --file Dockerfile --tag ${{secrets.DOCKER_USER}}/ansible-ci:latest
+          docker build . --file Dockerfile --tag cocopaps/ci-tools:test
